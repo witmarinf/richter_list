@@ -14,7 +14,6 @@ def genarateList(my_list):
         my_list.sort()
     print(my_list)
 
-
 def uniqueList(my_list):
     my_list = list(dict.fromkeys(my_list))
     print(my_list)
@@ -29,6 +28,13 @@ def showRichterList(my_list_Richter):
         print(my_list_Richter)
     else: print('empty list')
 
+def saveValueInFile(my_list_Richter):
+    f = open("plik.txt", "w")
+    for x in my_list_Richter:
+        f.write(str(x) + "\n")
+        #f.write("\n")
+    f.close()
+
 if __name__ == '__main__':
     print(getRichterValue(121))
     my_list = list()
@@ -37,3 +43,4 @@ if __name__ == '__main__':
     uniqueList(my_list)
     getValueRichterList(my_list, my_list_Richter)
     showRichterList(my_list_Richter)
+    saveValueInFile(my_list_Richter)
